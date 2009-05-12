@@ -1,0 +1,41 @@
+<project rhacover="1.6.1" version="0.0.1" name="kaeru" pathinfo="index.php" xmlns="http://rhaco.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://rhaco.org http://m.rhaco.org/xsd/project_1_6_x.xsd">
+    <database name="kaeru">
+        <table name="category">
+            <column name="id" />
+            <column name="name" />
+            <column name="created" type="timestamp" default="sysdate" />
+            <default>
+                <data><column name="name">仕事</column></data>
+                <data><column name="name">連絡</column></data>
+                <data><column name="name">買い物</column></data>
+                <data><column name="name">恋愛</column></data>
+                <data><column name="name">その他</column></data>
+            </default>
+        </table>
+        <table name="todo">
+            <column name="id" />
+            <column name="category" type="int" reference="category.id" />
+            <column name="subject" require="true" />
+            <column name="description" type="text" />
+            <column name="close" type="bool" default="false" />
+            <column name="priority" type="int" default="3" size="1">
+                <choices>
+                    <data caption="blocker">5</data>
+                    <data caption="critical">4</data>
+                    <data caption="major">3</data>
+                    <data caption="minor">2</data>
+                    <data caption="trivial">1</data>
+                </choices>
+            </column>
+            <column name="created" type="timestamp" default="sysdate" />
+            <column name="updated" type="timestamp" default="sysdate" />
+            <default>
+                <data>
+                    <column name="category" value="5" />
+                    <column name="subject">このTODOを削除する</column>
+                    <column name="description">自分のTODOを管理する前に、このタスクを削除する</column>
+                </data>
+            </default>
+        </table>
+    </database>
+</project>

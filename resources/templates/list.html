@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <title>kaeru :: todo manager on rhaco</title>
+  <style type="text/css">
+    table#todo th, table#todo td {
+      padding: .3em;
+    }
+    table#todo th {
+      background: #aaa;
+    }
+    table#todo tr.odd {
+      background: #dcdcdc;
+    }
+  </style>
+</head>
+<body>
+  <h1><a href="{$rhaco.url()}">todo manager</a></h1>
+  <rt:block name="content">
+  <h2>list</h2>
+  
+  <p><a href="{$rhaco.url('create')}">Add new todo</a></p>
+  
+  <ul id="categories" rt:param="categories" rt:var="category">
+    <li><a href="{$rhaco.url('cat')}/{$category.id}">{$category.toString()}</a></li>
+  </ul>
+  
+  <table id="todo" rt:param="object_list" rt:var="object">
+    <tbody>
+      <tr class="even">
+        <td>{$object.factCategory.toString()}</td>
+        <td><a href="{$rhaco.url('detail')}/{$object.id}">{$object.subject}</a></td>
+        <td>{$f.text2html($object.description)}</td>
+        <td>{$object.captionPriority()}</td>
+        <form action="{$rhaco.url('update')}/{$object.id}" method="post">
+          <td>
+            <input type="hidden" name="category" value="{$object.category}" />
+            <input type="hidden" name="subject" value="{$object.subject}" />
+            <input type="hidden" name="description" value="{$object.description}" />
+            <input type="hidden" name="priority" value="{$object.priority}" />
+            <input type="hidden" name="close" value="1" />
+            <input type="submit" value="close" />
+          </td>
+        </form>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>category</th>
+        <th>subject</th>
+        <th>description</th>
+        <th>priority</th>
+        <th>action</th>
+      </tr>
+    </thead>
+  </table>
+  </rt:block>
+</body>
+</html>

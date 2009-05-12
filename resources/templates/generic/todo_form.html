@@ -1,0 +1,17 @@
+<rt:extends href="../list.html" />
+<rt:block name="content">
+<rt:invalid />
+  <form action="{$rhaco.uri()}" method="post">
+    <dl>
+    <rt:loop param="{$object.models('views','form_display')}" var="column">
+      <rt:if param="{$column.isSerial()}">
+        {$viewutil.columnString($object,$column)}
+      <rt:else />
+        <dt>{$object.label($column)}</dt>
+        <dt>{$viewutil.columnString($object,$column,true,true,'views')}</dt>
+      </rt:if>
+    </rt:loop>
+    </dl>
+    <input type="submit" name="save_create" value="{$generic_button}" />
+  </form>
+</rt:block>

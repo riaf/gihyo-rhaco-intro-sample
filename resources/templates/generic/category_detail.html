@@ -1,0 +1,37 @@
+<rt:extends href="../list.html" />
+<rt:block name="content">
+  <h2>{$object.name}</h2>
+  <p><a href="{$rhaco.url('create')}">Add new todo</a></p>
+  
+  <ul id="categories" rt:param="categories" rt:var="category">
+    <li><a href="{$rhaco.url('cat')}/{$category.id}">{$category.toString()}</a></li>
+  </ul>
+  
+  <table id="todo" rt:param="{$object.dependTodos}" rt:var="todo">
+    <tbody>
+      <tr class="even">
+        <td><a href="{$rhaco.url('detail')}/{$object.id}">{$todo.subject}</a></td>
+        <td>{$f.text2html($todo.description)}</td>
+        <td>{$todo.captionPriority()}</td>
+        <form action="{$rhaco.url('update')}/{$todo.id}" method="post">
+          <td>
+            <input type="hidden" name="category" value="{$todo.category}" />
+            <input type="hidden" name="subject" value="{$todo.subject}" />
+            <input type="hidden" name="description" value="{$todo.description}" />
+            <input type="hidden" name="priority" value="{$todo.priority}" />
+            <input type="hidden" name="close" value="1" />
+            <input type="submit" value="close" />
+          </td>
+        </form>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th>subject</th>
+        <th>description</th>
+        <th>priority</th>
+        <th>action</th>
+      </tr>
+    </thead>
+  </table>
+</rt:block>
