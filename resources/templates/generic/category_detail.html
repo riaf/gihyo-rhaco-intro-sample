@@ -1,7 +1,7 @@
 <rt:extends href="../list.html" />
 <rt:block name="content">
   <h2>{$object.name}</h2>
-  <p><a href="{$rhaco.url('create')}">Add new todo</a></p>
+  <p><a href="{$rhaco.url('create')}">_('Add new todo')</a></p>
   
   <ul id="categories" rt:param="categories" rt:var="category">
     <li><a href="{$rhaco.url('cat')}/{$category.id}">{$category.toString()}</a></li>
@@ -27,10 +27,10 @@
     </tbody>
     <thead>
       <tr>
-        <th>subject</th>
-        <th>description</th>
-        <th>priority</th>
-        <th>action</th>
+        <th>_('subject')</th>
+        <th>_('description')</th>
+        <th>_('priority')</th>
+        <th>_('action')</th>
       </tr>
     </thead>
   </table>

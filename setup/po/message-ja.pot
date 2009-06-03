@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-03 09:52+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <team@exsample.com>\n"
+
+#: library/model/table/CategoryTable.php:52
+#: library/model/table/TodoTable.php:67
+
+msgid "id"
+msgstr ""
+
+#: library/model/table/CategoryTable.php:78
+
+msgid "name"
+msgstr "名前"
+
+#: library/model/table/CategoryTable.php:103
+#: library/model/table/TodoTable.php:243
+
+msgid "created"
+msgstr "作成日時"
+
+#: library/model/table/TodoTable.php:92
+#: resources/templates/list.html:49
+
+msgid "category"
+msgstr "カテゴリ"
+
+#: library/model/table/TodoTable.php:117
+#: resources/templates/generic/category_detail.html:30
+#: resources/templates/list.html:50
+
+msgid "subject"
+msgstr "タイトル"
+
+#: library/model/table/TodoTable.php:142
+#: resources/templates/generic/category_detail.html:31
+#: resources/templates/list.html:51
+
+msgid "description"
+msgstr "概要"
+
+#: library/model/table/TodoTable.php:167
+
+msgid "close"
+msgstr "完了"
+
+#: library/model/table/TodoTable.php:202
+#: resources/templates/generic/category_detail.html:32
+#: resources/templates/list.html:52
+
+msgid "priority"
+msgstr "優先度"
+
+#: library/model/table/TodoTable.php:203
+
+msgid "blocker"
+msgstr "最高"
+
+#: library/model/table/TodoTable.php:203
+
+msgid "critical"
+msgstr "高い"
+
+#: library/model/table/TodoTable.php:203
+
+msgid "major"
+msgstr "普通"
+
+#: library/model/table/TodoTable.php:203
+
+msgid "minor"
+msgstr "低い"
+
+#: library/model/table/TodoTable.php:203
+
+msgid "trivial"
+msgstr "最低"
+
+#: library/model/table/TodoTable.php:272
+
+msgid "updated"
+msgstr "更新日時"
+
+#: resources/templates/generic/category_detail.html:4
+#: resources/templates/list.html:22
+
+msgid "Add new todo"
+msgstr "新しい TODO を作成する"
+
+#: resources/templates/generic/category_detail.html:33
+#: resources/templates/list.html:53
+
+msgid "action"
+msgstr "操作"
+
+#: resources/templates/list.html:18
+
+msgid "todo manager"
+msgstr "TODO 管理"
+
+#: resources/templates/list.html:20
+
+msgid "list"
+msgstr "リスト"
+
+#: setup/project.xml:description
+
+msgid ""
+msgstr ""
+
