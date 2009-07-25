@@ -15,7 +15,7 @@ $patterns = array(
 	),
 	// generic.Views を使用する場合は、設定を省略できます。
 	'^detail/(\d+)$' => array('method' => 'detail', 'args' => array(new Todo(), new C(Q::fact()))),
-	'^create$' => array('method' => 'create', 'args' => array(new Todo(), null, Rhaco::url())),
+	'^create$' => array('method' => 'create', 'args' => array(new Todo(), Rhaco::url())),
 	'^update/(\d+)$' => array('method' => 'update', 'args' => array(new Todo(), null, Rhaco::url())),
 	'^delete/(\d+)$' => array('method' => 'delete', 'args' => array(new Todo(), null, Rhaco::url())),
 	
